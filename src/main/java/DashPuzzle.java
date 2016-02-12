@@ -18,13 +18,13 @@ public class DashPuzzle {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    // get("/palresults", (request, response) -> {
-    //   HashMap<String, Object> model = new HashMap<String, Object>();
-    //   String phrase = request.queryParams("sentenceInput");
-    //   model.put("sentence", sentence);
-    //   model.put("template", "templates/puzzleOutput.vtl");
-    //   return new ModelAndView(model, layout);
-    // }, new VelocityTemplateEngine());
+    get("/palresults", (request, response) -> {
+      HashMap<String, Object> model = new HashMap<String, Object>();
+      String phrase = request.queryParams("sentenceInput");
+      model.put("sentence", sentence);
+      model.put("template", "templates/puzzleOutput.vtl");
+      return new ModelAndView(model, layout);
+    }, new VelocityTemplateEngine());
   }
 
     public static String dashPuzzle(String sentence) {
