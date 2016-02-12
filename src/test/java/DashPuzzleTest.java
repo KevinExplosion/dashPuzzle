@@ -40,13 +40,4 @@ public class DashPuzzleTest extends FluentTest{
       goTo("http://localhost:4567");
       assertThat(pageSource()).contains("The Dash Puzzle!");
   }
-
-  @Test
- public void formTest() {
-     goTo("http://localhost:4567/puzzleOutput.vtl");
-     find("#player1Rock").click();
-     find("#player2Rock").click();
-     submit("#submitChoice");
-     assertThat(pageSource()).contains("It's a tie!");
- }
 }
