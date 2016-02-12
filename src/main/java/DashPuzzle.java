@@ -11,18 +11,20 @@ public class DashPuzzle {
     String layout = "templates/layout.vtl";
     staticFileLocation("/public");
 
-    get("/Puzzle", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-
+    get("/", (request, response) -> {
+      HashMap model = new HashMap();
       model.put("template", "templates/puzzleInput.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/palresults", (request, response) -> {
-      HashMap<String, Object> model = new HashMap<String, Object>();
-      String phrase = request.queryParams("sentenceInput");
-      model.put("sentence", sentence);
+    get("/puzzleOutput", (request, response) -> {
+      HashMap model = new HashMap();
       model.put("template", "templates/puzzleOutput.vtl");
+
+      String userInput = request.queryParams("sentenceInput");
+      String puzzleOutput = dashPuzzle(userInput);
+
+      model.put("puzzleOutput", puzzleOutput);
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
   }
