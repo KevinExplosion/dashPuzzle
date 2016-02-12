@@ -8,6 +8,10 @@ import static org.junit.Assert.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import java.util.ArrayList;
 
-public class AppTest {
-
+public class DashPuzzleTest {
+  @Test
+  public void dashPuzzle_removesVowels_wordChanges() {
+    DashPuzzle testDashPuzzle = new DashPuzzle();
+    assertEquals("P-zzl-", testDashPuzzle.dashPuzzle("Puzzle"));
+  }
 }
