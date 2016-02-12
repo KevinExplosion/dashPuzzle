@@ -20,7 +20,7 @@ public class DashPuzzle {
 
     // get("/palresults", (request, response) -> {
     //   HashMap<String, Object> model = new HashMap<String, Object>();
-    //   String phrase = request.queryParams("phraseInput");
+    //   String phrase = request.queryParams("sentenceInput");
     //   model.put("sentence", sentence);
     //   model.put("template", "templates/puzzleOutput.vtl");
     //   return new ModelAndView(model, layout);
